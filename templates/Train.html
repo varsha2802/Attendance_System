@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block train %}
+      <h1>Train feed
+      </h1>
+<div class="container">
+      <form action="/train" class="dropzone" method="POST" enctype="multipart/form-data" accept="image/*">
+          <form method=post enctype=multipart/form-data>
+      <input type=file name=file id="file">
+              <a class="btn btn-outline-dark btn-sm mx-1" href="/upload/{{file}}" type="button">Upload</a>
+
+    </form>
+          <hr>
+      </form>
+    {% for file in files %}
+      <img src="{{ url_for('upload', filename=file) }}" style="width: 64px">
+    {% endfor %}
+          </div>
+
+
+
+</form>
+</div>
+{% endblock %}
+{% block script %}
+<script>
+    $(function() {
+    $('#fileupload').fileupload({
+        url: 'upload',
+        dataType: 'json',
+        add: function(e, data) {
+            data.submit();
+        },
+        success: function(response, status) {
+            console.log(response);
+        },
+        error: function(error) {
+            console.log(error);
+        }
+    });
+})
+</script>
+{% endblock %}

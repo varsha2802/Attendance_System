@@ -1,0 +1,72 @@
+
+{% extends "base.html" %}
+{% block style %}
+<style>
+    background-image: url("/background/bck1.jpg");
+
+</style>
+ {% endblock %}
+{% block content %}
+<style>
+
+</style>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-8  offset-lg-2">
+            <h1 class="mt-5">Attendance system</h1>
+
+
+            <form action="/" method="POST">
+                <div class="mb-3">
+                    <label for="EnrollmentNo" class="form-label">Enrollment No:</label>
+                    <input type="number" class="form-control" name = "EnrollmentNo" id= "EnrollmentNo" required="required"/>
+
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" name = "name" id="name" required="required"/>
+
+                </div>
+                <div class="mb-3">
+                    <label for="department" class="form-label">Department:</label>
+                    <input type="text" class="form-control"  name = "department" id="department" />
+
+
+                   <br><br>
+
+                <!--<div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>-->
+                <button type="submit" class="btn btn-outline-info">Submit</button>
+            </form>
+
+            <!--<img src="{{ url_for('video_feed') }}" width="100%">-->
+
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
